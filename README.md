@@ -13,7 +13,7 @@ My database is theoretically used by a team of people working for a company whic
 ### Example 1 - create complicated(ish) table -- success
 I found that the LLM was very good at creating tables.
 1. **Prompt from me:**
->"Create a table called BandPlaysConcert. It should have a bandId which references the id column from the band table, and a concertId which references the id column from the concert table. There should also be a separate, unique id that auto increments. The combination of bandId and concertId should be unique"
+>Create a table called BandPlaysConcert. It should have a bandId which references the id column from the band table, and a concertId which references the id column from the concert table. There should also be a separate, unique id that auto increments. The combination of bandId and concertId should be unique.
 
 2. **AI-generated SQLite:**
 ```
@@ -36,4 +36,16 @@ CREATE TABLE BandPlaysConcert (
 >The id is a unique identifier for each entry and is auto-incremented.  
 >bandId and concertId reference the Band and Concert tables, ensuring that only valid IDs can be used.  
 >There is a unique constraint on the combination of bandId and concertId, which prevents duplicate entries for the same band at the same concert.  
->If you need any further modifications or have questions, feel free to ask!  
+>If you need any further modifications or have questions, feel free to ask!
+
+### Example 2 - ______ -- failure
+I found that the LLM was not very good at _______.
+1. **Prompt from me:**
+>"__________"
+
+2. **AI-generated SQLite:**
+```
+_______
+```  
+3. **Response:**
+>"_______"
