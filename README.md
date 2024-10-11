@@ -4,7 +4,7 @@
 My database is theoretically used by a team of people working for a company which specializes is maintaining (advertizing, selling, authenticating, etc.) concert tickets for several different venues.
 
 ## ERD diagram
-
+[ERD diagram of my Database](https://github.com/HarrisonWinslow/LLMDB/blob/main/ERD.png)
 
 ## What works well and what doesn't
 
