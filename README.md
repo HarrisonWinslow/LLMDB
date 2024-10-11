@@ -61,3 +61,5 @@ WHERE Attendee.firstName = 'John' OR Attendee.lastName = 'John';
 >|             27              | "
 
 In this case, the AI figured that if you have a lot of tickets to concerts, you must like concerts, which makes sense. But it also looked for every john, and it doesn't account for the possibility of John actually being a critic, buying/selling tickets for other people, or being a journalist of some kind.
+
+### [Other Examples of prompting the LLM](www.google.com)
