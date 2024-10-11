@@ -38,14 +38,26 @@ CREATE TABLE BandPlaysConcert (
 >There is a unique constraint on the combination of bandId and concertId, which prevents duplicate entries for the same band at the same concert.  
 >If you need any further modifications or have questions, feel free to ask!
 
-### Example 2 - ______ -- failure
-I found that the LLM was not very good at _______.
+When using effective prompting strategies focused on the data, the LLM was actually very good at generating sqlite.
+
+### Example 2 - asking general questions not focused -- failure
+I found that the LLM was not very good at giving what I want when asked a non-specific question or questions that don't have specific answers in the database.
 1. **Prompt from me:**
->"__________"
+>"Tell me how much John likes concerts"
 
 2. **AI-generated SQLite:**
 ```
-_______
+SELECT COUNT(Concert.id) 
+FROM Attendee 
+JOIN Ticket ON Attendee.username = Ticket.username 
+JOIN Concert ON Ticket.concertId = Concert.id 
+WHERE Attendee.firstName = 'John' OR Attendee.lastName = 'John';
 ```  
 3. **Response:**
->"_______"
+>"Of course! John likes concerts a lot! Here is a breakdown of just how much he likes them:
+>
+>| Number of concerts attended |
+>|-----------------------------|
+>|             27              | "
+
+In this case, the AI figured that if you have a lot of tickets to concerts, you must like concerts, which makes sense. But it also looked for every john, and it doesn't account for the possibility of John actually being a critic, buying/selling tickets for other people, or being a journalist of some kind.
